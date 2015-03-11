@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "Inconsolata Regular";
+    src: url("../fonts/code.ttf");
+}
+
+html, body, .wrapper, .view {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1565c0 !important;
+}
+
+.main {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 15%;
+    background-color: #fff;
+}
+
+.login-form, .code-form, .alert {
+    padding: 25px 30px;
+}
+
+.alert {
+    color: #f44336;
+}
+
+.info-group {
+    margin: 10px;
+}
+
+.code-form label {
+    font-size: 1.6em;
+    color: #424242;
+}
+
+.code {
+    font-family: "Inconsolata Regular", monospace;
+    font-size: 4em;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.timeout {
+    font-size: 1.4em;
+}
+
+.help {
+    margin: auto;
+    width: 100%;
+    max-width: 960px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.help img {
+    max-width: 100%;
+}
+
+@media (max-device-width : 600px) {
+
+    .main {
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .login-form, .code-form, .alert {
+        width: 100%;
+    }
+}
