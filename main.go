@@ -21,24 +21,8 @@ func middleware(h http.Handler) http.Handler {
 	return handlers.CombinedLoggingHandler(os.Stdout,
 		handlers.CompressHandler(
 			http.StripPrefix(config.Prefix,
-				IndexHandler(h))))
-}
-
-type indexHandler struct {
-	chain http.Handler
-}
-
-//IndexHandler redirects requests with no path to the root of Prefix
-func IndexHandler(h http.Handler) http.Handler {
-	return indexHandler{h}
-}
-
-func (t indexHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
-	if r.RequestURI == config.Prefix {
-		http.Redirect(rw, r, config.Prefix+"/", 301)
-		return
-	}
-	t.chain.ServeHTTP(rw, r)
+				IndexHandler(
+					ForwardedHandler(h)))))
 }
 
 func main() {
