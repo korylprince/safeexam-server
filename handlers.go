@@ -28,6 +28,7 @@ type forwardedHandler struct {
 	chain http.Handler
 }
 
+//ForwardedHandler replaces the Remote Address with the X-Forwarded-For header if it exists
 func ForwardedHandler(h http.Handler) http.Handler {
 	return forwardedHandler{h}
 }
