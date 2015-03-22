@@ -54,7 +54,7 @@ func authHandler(c *Context, w http.ResponseWriter, r *http.Request) {
 		e := json.NewEncoder(w)
 		err = e.Encode(AuthResponse{SessionID: sessionID})
 		if err != nil {
-			handleError(w, http.StatusBadRequest, fmt.Errorf("Error encoding json: %v", err))
+			handleError(w, http.StatusInternalServerError, fmt.Errorf("Error encoding json: %v", err))
 		}
 		return
 	}
@@ -87,7 +87,7 @@ func codeHandler(c *Context, w http.ResponseWriter, r *http.Request) {
 		e := json.NewEncoder(w)
 		err = e.Encode(CodeResponse{Code: code, Expires: expires, ServerTime: time.Now()})
 		if err != nil {
-			handleError(w, http.StatusBadRequest, fmt.Errorf("Error encoding json: %v", err))
+			handleError(w, http.StatusInternalServerError, fmt.Errorf("Error encoding json: %v", err))
 			return
 		}
 		return
@@ -127,7 +127,7 @@ func checkHandler(c *Context, w http.ResponseWriter, r *http.Request) {
 	e := json.NewEncoder(w)
 	err = e.Encode(CheckResponse{Status: true})
 	if err != nil {
-		handleError(w, http.StatusBadRequest, fmt.Errorf("Error encoding json: %v", err))
+		handleError(w, http.StatusInternalServerError, fmt.Errorf("Error encoding json: %v", err))
 		return
 	}
 }
