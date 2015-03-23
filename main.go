@@ -11,7 +11,7 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/korylprince/go-ad-auth"
-	"github.com/korylprince/safeexam/api"
+	"github.com/korylprince/safeexam-server/api"
 )
 
 var static = []string{"/js", "/css", "/fonts", "/views", "/images"}
