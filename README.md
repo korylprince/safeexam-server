@@ -18,6 +18,8 @@ Configuration is done with environment variables. See `Config` for what those op
 
 #Copyright Information#
 
+Some libraries under `/static/` have their own licenses.
+
 All other code is Copyright 2015 Kory Prince (korylprince at gmail dot com.)
 
 This code is licensed under the same license go is licensed under (with slight modification.) If you'd like another license please email me.
